@@ -5,11 +5,11 @@
         <td>Email</td>
         <th>Name</th>
     </tr>
-    {{#each controller}}
+    {{#each user in users}}
         <tr>
-            <td>{{id}}</td>
-            <td>{{email}}</td>
-            <td><a href='#'>{{fullName}}</a></td>
+            <td>{{user.id}}</td>
+            <td>{{user.email}}</td>
+            <td>{{#linkTo 'users.show' user}}{{user.fullName}}{{/linkTo}}</td>
         </tr>
     {{/each}}
 </table>
