@@ -1,1 +1,4 @@
-Prototypable.Store = DS.Store.extend(revision: 11)
+Prototypable.Store = DS.Store.extend
+  revision: 11,
+  adapter: DS.RESTAdapter.create({ bulkCommit: false })
+
