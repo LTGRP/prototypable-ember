@@ -17,6 +17,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if user.destroy
+      render json: user, status: 204
+    else
+      render json: user
+    end
+  end
+
   def update
     if user.update_attributes(params[:user])
       render json: user
