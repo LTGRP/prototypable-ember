@@ -16,12 +16,22 @@ Prototypable.Router.map (match) ->
     @route 'popular'
     @route 'random'
 
-# Index route
+# Index route (root url)
 Prototypable.IndexRoute = Ember.Route.extend
+  model: ->
+    Prototypable.Item.find()
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'search')
+    controller.set('items', model)
 
 # Item routes
+Prototypable.ItemsIndexRoute = Ember.Route.extend
+  model: ->
+    Prototypable.Item.find()
+  setupController: (controller, model) ->
+    @controllerFor('application').set('currentRoute', 'all')
+    controller.set('items', model)
+
 Prototypable.ItemsNewRoute = Ember.Route.extend
   model: ->
     Prototypable.Item.createRecord()

@@ -19,4 +19,8 @@ Prototypable.ApplicationController = Ember.Controller.extend
     @get('currentRoute') == 'random'
     ).property('currentRoute')
 
+  isAllItems: (->
+    @get('currentRoute') == 'all'
+  ).property('currentRoute')
+
 

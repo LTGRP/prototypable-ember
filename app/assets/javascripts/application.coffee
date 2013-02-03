@@ -1,5 +1,6 @@
 #= require modernizr
 #= require jquery
+#= require sugar
 #= require handlebars
 #= require ember
 #= require ember-data

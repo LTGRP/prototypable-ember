@@ -4,6 +4,7 @@
             <div class='nav-collapse collapse'>
                 <ul class='nav'>
                     <li {{bindAttr class="isSearch:active"}}>{{#linkTo 'index'}}Search{{/linkTo}}</li>
+                    <li {{bindAttr class="isAllItems:active"}}>{{#linkTo 'items.index'}}All Items{{/linkTo}}</li>
                     <li {{bindAttr class="isFeatured:active"}}>{{#linkTo 'items.featured'}}Featured{{/linkTo}}</li>
                     <li {{bindAttr class="isNewest:active"}}>{{#linkTo 'items.newest'}}Newest{{/linkTo}}</li>
                     <li {{bindAttr class="isPopular:active"}}>{{#linkTo 'items.popular'}}Most Popular{{/linkTo}}</li>
