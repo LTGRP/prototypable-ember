@@ -1,0 +1,17 @@
+<h1>Items</h1>
+<table class='table table-striped'>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <td>Description</td>
+    </tr>
+    {{#each item in items}}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{#linkTo 'items.show' item}}{{item.name}}{{/linkTo}}</td>
+            <td>{{item.description}}</td>
+        </tr>
+    {{/each}}
+</table>
+<div class='page-header'></div>
+<div class='pull-right'>{{#linkTo 'items.new' class='btn btn-primary'}}Create{{/linkTo}}</div>

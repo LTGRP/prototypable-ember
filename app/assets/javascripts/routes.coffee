@@ -5,44 +5,61 @@ Prototypable.Router.reopen
 
 # Router maps
 Prototypable.Router.map (match) ->
-  @resource 'users', ->
+  @resource 'items', ->
     @route 'new'
-    @route 'edit',
-      path: '/:user_id/edit'
+    @route 'edit'
+      path: '/:item_id/edit'
     @route 'show'
-      path: '/:user_id'
+      path: '/:item_id'
+    @route 'featured'
+    @route 'newest'
+    @route 'popular'
+    @route 'random'
 
 # Index route
 Prototypable.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
-    @controllerFor('application').set('currentRoute', 'home')
+    @controllerFor('application').set('currentRoute', 'search')
 
-# User routes
-Prototypable.UsersRoute = Ember.Route.extend
-  setupController: ->
-    @controllerFor('application').set('currentRoute', 'users')
-
-Prototypable.UsersIndexRoute = Prototypable.UsersRoute.extend
+# Item routes
+Prototypable.ItemsNewRoute = Ember.Route.extend
   model: ->
-    Prototypable.User.find()
+    Prototypable.Item.createRecord()
   setupController: (controller, model) ->
-    @_super()
-    controller.set('users', model)
+    controller.set('item', model)
 
-Prototypable.UserRoute = Ember.Route.extend
+Prototypable.ItemsShowRoute = Ember.Route.extend
   model: (params) ->
-    Prototypable.User.find(params.user_id)
+    Prototypable.Item.find(params.item_id)
   setupController: (controller, model) ->
-    controller.set('content', model)
-    @controllerFor('application').set('currentRoute', 'users')
+    controller.set('item', model)
 
-Prototypable.UsersShowRoute = Prototypable.UserRoute.extend()
-Prototypable.UsersEditRoute = Prototypable.UserRoute.extend()
-
-Prototypable.UsersNewRoute = Prototypable.UsersRoute.extend
+Prototypable.ItemsFeaturedRoute = Ember.Route.extend
   model: ->
-    Prototypable.User.createRecord()
+    Prototypable.Item.find()
   setupController: (controller, model) ->
-    @_super()
-    controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'featured')
+    controller.set('items', model)
+
+Prototypable.ItemsNewestRoute = Ember.Route.extend
+  model: ->
+    Prototypable.Item.find()
+  setupController: (controller, model) ->
+    @controllerFor('application').set('currentRoute', 'newest')
+    controller.set('items', model)
+
+Prototypable.ItemsPopularRoute = Ember.Route.extend
+  model: ->
+    Prototypable.Item.find()
+  setupController: (controller, model) ->
+    @controllerFor('application').set('currentRoute', 'popular')
+    controller.set('items', model)
+
+Prototypable.ItemsRandomRoute = Ember.Route.extend
+  model: ->
+    Prototypable.Item.find()
+  setupController: (controller, model) ->
+    @controllerFor('application').set('currentRoute', 'random')
+    controller.set('items', model)
+
 

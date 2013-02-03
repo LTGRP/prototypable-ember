@@ -14,8 +14,3 @@
 
 window.Prototypable = Ember.Application.create()
 
-# csrf_token for rails
-#$ ->
-#  token = $('meta[name="csrf-token"]').attr('content')
-#  $.ajaxPrefilter (options, originalOptions, xhr) ->
-#    xhr.setRequestHeader('X-CSRF-Token', token)

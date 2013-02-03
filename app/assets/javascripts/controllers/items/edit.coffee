@@ -1,17 +1,17 @@
-Prototypable.UsersEditController = Ember.ObjectController.extend
+Prototypable.ItemsEditController = Ember.ObjectController.extend
   headerTitle: 'Edit'
   buttonTitle: 'Update'
 
   save: ->
     @store.commit()
-    @transitionToRoute 'users.show', @content
+    @transitionToRoute 'items.show', @content
 
   cancel: ->
     if @content.isDirty
       @content.rollback()
-    @transitionToRoute 'users.show', @content
+    @transitionToRoute 'items.show', @content
 
   destroy: ->
     @content.deleteRecord()
     @store.commit()
-    @transitionToRoute 'users.index'
+    @transitionToRoute 'items.featured'

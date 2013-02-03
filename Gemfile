@@ -12,5 +12,9 @@ group :assets do
   gem 'haml'
 end
 
+group :development do
+  gem 'meta_request'
+end
+
 gem 'jquery-rails'
 gem 'ember-rails'

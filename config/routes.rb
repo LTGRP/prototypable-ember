@@ -11,7 +11,8 @@ Prototypable::Application.routes.draw do
     end
   end
 
-  resources :users, :except => :edit, :constraints => FormatTest.new(:json)
+  resources :users, except: :edit, constraints: FormatTest.new(:json)
+  resources :items, except: :edit, constraints: FormatTest.new(:json)
   get '*foo', :to => 'home#index', :constraints => FormatTest.new(:html)
   get '/', :to => 'home#index', :constraints => FormatTest.new(:html)
 end

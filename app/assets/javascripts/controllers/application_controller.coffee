@@ -1,8 +1,22 @@
 Prototypable.ApplicationController = Ember.Controller.extend
-  isHome: (->
-    @get('currentRoute') == 'home'
+  isSearch: (->
+    @get('currentRoute') == 'search'
     ).property('currentRoute')
 
-  isUsers: (->
-    @get('currentRoute') == 'users'
+  isFeatured: (->
+    @get('currentRoute') == 'featured'
     ).property('currentRoute')
+
+  isNewest: (->
+    @get('currentRoute') == 'newest'
+    ).property('currentRoute')
+
+  isPopular: (->
+    @get('currentRoute') == 'popular'
+    ).property('currentRoute')
+
+  isRandom: (->
+    @get('currentRoute') == 'random'
+    ).property('currentRoute')
+
+

@@ -1,0 +1,17 @@
+<h1>{{headerTitle}} {{name}}</h1>
+<form>
+    <fieldset>
+        <div>
+            <label {{bindAttr for="nameField.elementId"}}>Name</label>
+            {{view Ember.TextField valueBinding="name" name="name" viewName="nameField"}}
+        </div>
+        <div>
+            <label {{bindAttr for="descriptionField.elementId"}}>Last Name</label>
+            {{view Ember.TextArea valueBinding="description" name="description" viewName="descriptionField"}}
+        </div>
+    </fieldset>
+</form>
+<div class='page-header'></div>
+
+<a href='#' {{action cancel target="controller"}} class='btn btn-inverse'>Cancel</a>
+<a href='#' {{action save}} class='btn btn-success'>{{buttonTitle}}</a>

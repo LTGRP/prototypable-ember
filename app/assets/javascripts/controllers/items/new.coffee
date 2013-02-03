@@ -1,4 +1,4 @@
-Prototypable.UsersNewController = Ember.ObjectController.extend
+Prototypable.ItemsNewController = Ember.ObjectController.extend
   headerTitle: 'Create'
   buttonTitle: 'Create'
 
@@ -8,8 +8,8 @@ Prototypable.UsersNewController = Ember.ObjectController.extend
 
   cancel: ->
     @content.deleteRecord()
-    @transitionToRoute('users.index')
+    @transitionToRoute('items.newest')
 
   afterSave: ->
     @content.removeObserver 'id', @, 'afterSave'
-    @transitionToRoute('users.show', @content)
+    @transitionToRoute('items.show', @content)
