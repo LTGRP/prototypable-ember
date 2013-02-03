@@ -29,12 +29,15 @@ Prototypable.UsersIndexRoute = Prototypable.UsersRoute.extend
     @_super()
     controller.set('users', model)
 
-Prototypable.UsersShowRoute = Prototypable.UsersRoute.extend
+Prototypable.UserRoute = Ember.Route.extend
   model: (params) ->
     Prototypable.User.find(params.user_id)
   setupController: (controller, model) ->
-    @_super()
     controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'users')
+
+Prototypable.UsersShowRoute = Prototypable.UserRoute.extend()
+Prototypable.UsersEditRoute = Prototypable.UserRoute.extend()
 
 Prototypable.UsersNewRoute = Prototypable.UsersRoute.extend
   model: ->
@@ -42,3 +45,4 @@ Prototypable.UsersNewRoute = Prototypable.UsersRoute.extend
   setupController: (controller, model) ->
     @_super()
     controller.set('content', model)
+

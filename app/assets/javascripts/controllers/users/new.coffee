@@ -1,4 +1,7 @@
 Prototypable.UsersNewController = Ember.ObjectController.extend
+  headerTitle: 'Create'
+  buttonTitle: 'Create'
+
   save: ->
     @store.commit()
     @content.addObserver 'id', @, 'afterSave'
