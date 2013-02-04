@@ -11,7 +11,7 @@
                     <li {{bindAttr class="isRandom:active"}}>{{#linkTo 'items.random'}}Random{{/linkTo}}</li>
                 </ul>
                 <form class="navbar-search pull-right">
-                    <input type="text" class="search-query" placeholder="Search">
+                    {{view Prototypable.SearchBox}}
                 </form>
             </div>
         </div>

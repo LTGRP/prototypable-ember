@@ -1,4 +1,4 @@
-<h1>{{headerTitle}} {{name}}</h1>
+<h1>Edit {{name}}</h1>
 <form>
     <fieldset>
         <div>
@@ -6,8 +6,12 @@
             {{view Ember.TextField valueBinding="name" name="name" viewName="nameField"}}
         </div>
         <div>
-            <label {{bindAttr for="descriptionField.elementId"}}>Last Name</label>
+            <label {{bindAttr for="descriptionField.elementId"}}>Description</label>
             {{view Ember.TextArea valueBinding="description" name="description" viewName="descriptionField"}}
+        </div>
+        <div>
+            <label {{bindAttr for="instructionsField.elementId"}}>Instructions</label>
+            {{view Ember.TextArea valueBinding="instructions" name="instructions" viewName="instructionsField"}}
         </div>
     </fieldset>
 </form>
