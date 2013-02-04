@@ -7,11 +7,9 @@
         <div>Some User</div>
         <hr>
         <i class="icon-calendar icon-white"></i>
-        <div>10/11/2012</div>
+        <div>{{createdAt}}</div>
         <hr>
-        <div class='pull-left'><a href="http://www.twitter.com" class="social twitter"></a></div>
-        <div class='pull-left'><a href="http://www.facebook.com" class="social facebook"></a></div>
-        <div class='pull-left'><a href="http://plus.google.com" class="social google"></a></div>
+        {{template "items/social"}}
     </div>
     <div class='span6'>
         <div class='pull-right'>
@@ -25,21 +23,21 @@
 <div class='row-fluid'>
     <div class='span4'>
         <div class='well'>
-            Item Downloads
+            {{template "items/downloads"}}
             <hr>
-            Item Tags
+            {{template "items/tags"}}
             <hr>
-            License Info
+            {{template "items/license"}}
         </div>
     </div>
     <div class='span8'>
         <div class='well'><img src='http://placehold.it/800x200'></div>
     </div>
     <div class='span8'>
-        <div class='well'>Item Instructions</div>
+        <div class='well'>{{instructions}}</div>
     </div>
     <div class='span8'>
-        <div class='well'>Item Comments</div>
+        <div class='well'>{{template "items/comments"}}</div>
     </div>
 </div>
 

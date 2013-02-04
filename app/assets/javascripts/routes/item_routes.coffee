@@ -45,7 +45,7 @@ Prototypable.ItemsPopularRoute = Ember.Route.extend
 Prototypable.ItemsRandomRoute = Ember.Route.extend
   model: ->
     # TODO: actually grab a random model
-    Prototypable.Item.find(331)
+    Prototypable.Item.find(Prototypable.Item.find().content[0].id)
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'random')
     controller.set('item', model)

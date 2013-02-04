@@ -6,7 +6,7 @@
             <div class='thumbnail'>
                 <img src='http://placehold.it/350x250'/>
             </div>
-            <h3>{{item.name}}</h3>
+                {{#linkTo 'items.show' item}}<h3>{{item.name}}</h3>{{/linkTo}}
             <div class='item-description'>{{item.description}}</div>
         </li>
     {{/each}}
