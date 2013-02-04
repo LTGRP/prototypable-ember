@@ -1,6 +1,6 @@
 Prototypable.ApplicationController = Ember.Controller.extend
-  isSearch: (->
-    @get('currentRoute') == 'search'
+  isHome: (->
+    @get('currentRoute') == 'home'
     ).property('currentRoute')
 
   isFeatured: (->
