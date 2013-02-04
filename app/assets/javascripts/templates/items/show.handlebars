@@ -1,10 +1,65 @@
-<h1>{{name}}</h1>
-
-<div>
-    <p>{{description}}</p>
+<div class='row-fluid'>
+    <div class='span4'>
+        <img src='http://placehold.it/350x250'/>
+    </div>
+    <div class='span2'>
+        <i class='icon-user icon-white'></i>
+        <div>Some User</div>
+        <hr>
+        <i class="icon-calendar icon-white"></i>
+        <div>10/11/2012</div>
+        <hr>
+        <div class='pull-left'><a href="http://www.twitter.com" class="social twitter"></a></div>
+        <div class='pull-left'><a href="http://www.facebook.com" class="social facebook"></a></div>
+        <div class='pull-left'><a href="http://plus.google.com" class="social google"></a></div>
+    </div>
+    <div class='span6'>
+        <div class='pull-right'>
+            Link to edit
+        </div>
+        <div class='row-fluid'><h1>{{name}}</h1></div>
+        <div class='row-fluid'><p>{{description}}</p></div>
+    </div>
+</div>
+<div class='spacer20'></div>
+<div class='row-fluid'>
+    <div class='span4'>
+        <div class='well'>
+            Item Downloads
+            <hr>
+            Item Tags
+            <hr>
+            License Info
+        </div>
+    </div>
+    <div class='span8'>
+        <div class='well'><img src='http://placehold.it/800x200'></div>
+    </div>
+    <div class='span8'>
+        <div class='well'>Item Instructions</div>
+    </div>
+    <div class='span8'>
+        <div class='well'>Item Comments</div>
+    </div>
 </div>
 
-<div class='page-header'></div>
 
-{{#linkTo "items.index" class="btn"}}Back{{/linkTo}}
-{{#linkTo "items.edit" content class="btn btn-primary"}}Edit{{/linkTo}}
+
+
+
+
+
+
+
+
+
+<!--<h1>{{name}}</h1>-->
+
+<!--<div>-->
+    <!--<p>{{description}}</p>-->
+<!--</div>-->
+
+<!--<div class='page-header'></div>-->
+
+<!--{{#linkTo "items.index" class="btn"}}Back{{/linkTo}}-->
+<!--{{#linkTo "items.edit" content class="btn btn-primary"}}Edit{{/linkTo}}-->
