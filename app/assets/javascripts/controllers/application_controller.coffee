@@ -22,5 +22,3 @@ Prototypable.ApplicationController = Ember.Controller.extend
   isAllItems: (->
     @get('currentRoute') == 'all'
   ).property('currentRoute')
-
-

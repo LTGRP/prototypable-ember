@@ -16,5 +16,9 @@ group :development do
   gem 'meta_request'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 gem 'jquery-rails'
 gem 'ember-rails'

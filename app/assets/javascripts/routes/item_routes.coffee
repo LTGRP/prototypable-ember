@@ -49,3 +49,11 @@ Prototypable.ItemsRandomRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'random')
     controller.set('item', model)
+
+Prototypable.ItemsSearchRoute = Ember.Route.extend
+  templateName: 'items/index'
+  model: (query) ->
+    Prototypable.Item.find(name: /#{query}/, description: /#{query}/)
+  setupController: (controller, model) ->
+    @controllerFor('application').set('currentRoute', 'all')
+    controller.set('items', model)

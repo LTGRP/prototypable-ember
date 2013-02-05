@@ -16,4 +16,6 @@ Prototypable.Router.map (match) ->
     @route 'newest'
     @route 'popular'
     @route 'random'
+    @route 'search'
+      path: '/search?:query'
 
